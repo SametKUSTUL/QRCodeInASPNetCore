@@ -33,7 +33,9 @@ namespace QRCodeInASPNetCore.Models
 
         // for wifi qr code
         public string WIFIName { get; set; }
-        public string WIFIPassword { get; set; } 
+        public string WIFIPassword { get; set; }
+
+        public string PlainTextQr { get; set; }
     }
 
 

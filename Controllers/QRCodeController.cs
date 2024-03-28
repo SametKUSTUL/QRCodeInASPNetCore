@@ -43,11 +43,24 @@ namespace QRCodeInASPNetCore.Controllers
                 case 6: // wifi qr code
                     payload = new WiFi(model.WIFIName, model.WIFIPassword, WiFi.Authentication.WPA);
                     break;
+                case 7: // text Fast qr code
+                    payload = null;
+                    break;
 
             }
 
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
-            QRCodeData qrCodeData = qrGenerator.CreateQrCode(payload);
+            QRCodeData qrCodeData = null;
+            if (payload is null)
+            {
+                qrCodeData = qrGenerator.CreateQrCode(model.PlainTextQr, QRCodeGenerator.ECCLevel.Q);
+            }
+            else
+            {
+                qrGenerator.CreateQrCode(payload);
+            }
+            
+            
             QRCode qrCode = new QRCode(qrCodeData);
             var qrCodeAsBitmap = qrCode.GetGraphic(20);
 

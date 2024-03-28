@@ -18,6 +18,7 @@
                 <option value="4">WhatsApp</option>
                 <option value="5">Email</option>
                 <option value="6">WIFI</option>
+                <option value="7">TEXT</option>
             </select>
         </div>
     </div>
@@ -106,6 +107,14 @@
                 <label>Enter WIFI Password</label>
                 <input type="text" asp-for="WIFIPassword" class="form-control" autocomplete="off" />
             </div>
+        </div>
+    </div>
+
+    <!-- TEXT   -->
+    <div class="row mt-2 hideDiv" id="DIV7">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <label>Enter your Text</label>
+            <input type="text" asp-for="PlainTextQr" class="form-control" autocomplete="off" />
         </div>
     </div>
 
